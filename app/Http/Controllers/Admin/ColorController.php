@@ -78,4 +78,10 @@ class ColorController extends Controller
         $color->update($requestData);
         return redirect()->back()->with('message', 'Color Updated!');
     }
+
+    public function delete(Color $color)
+    {
+        $color->delete();
+        return redirect()->back()->with('message', 'Deleted!');
+    }
 }

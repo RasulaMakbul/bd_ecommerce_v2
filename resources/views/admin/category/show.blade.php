@@ -16,7 +16,7 @@
             </button>
 
             <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#colorCreateModal">
-                <i class="fa-solid fa-pen-to-square"></i></i> {{__('w Category')}}
+                <i class="fa-solid fa-pen-to-square"></i></i> {{__('edit Category')}}
             </button>
 
             <!-- Modal -->
@@ -24,7 +24,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="colorCreateModalLabel">{{__('w Category')}}</h5>
+                            <h5 class="modal-title" id="colorCreateModalLabel">{{__('edit Category')}}</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -236,8 +236,8 @@
                 @endif
             </td>
             <td>
-                <a href="{{route('subcategory.w',$item->id)}}" class="btn btn-sm link-info"><i class="fa-solid fa-eye fs-5"></i></a>
-                <a href="{{route('subcategory.w',$item->id)}}" class=" btn btn-sm link-warning" comment="w subcategory"><i class="fa-solid fa-pen-to-square fs-5"></i></a>
+                <a href="{{route('subcategory.show',$item->id)}}" class="btn btn-sm link-info"><i class="fa-solid fa-eye fs-5"></i></a>
+                <a href="{{route('subcategory.edit',$item->id)}}" class=" btn btn-sm link-warning" comment="edit subcategory"><i class="fa-solid fa-pen-to-square fs-5"></i></a>
                 <a href="{{route('subcategory.delete',$item->id)}}" class=" btn btn-sm link-danger" comment="Delete subcategory"><i class="fa-solid fa-trash fs-5"></i></a>
 
 
@@ -303,7 +303,7 @@
             </td>
             <td>
                 <a href="{{route('product.show',$item->id)}}" class="btn btn-sm link-info"><i class="fa-solid fa-eye fs-5"></i></a>
-                <a href="{{route('product.w',$item->id)}}" class=" btn btn-sm link-warning" comment="w subcategory"><i class="fa-solid fa-pen-to-square fs-5"></i></a>
+                <a href="{{route('product.edit',$item->id)}}" class=" btn btn-sm link-warning" comment="edit subcategory"><i class="fa-solid fa-pen-to-square fs-5"></i></a>
                 <a href="{{route('product.delete',$item->id)}}" class=" btn btn-sm link-danger" comment="Delete subcategory"><i class="fa-solid fa-trash fs-5"></i></a>
                 <!-- <form action="{{ route('category.delete', $item->id) }}" method="post" style="display:inline">
                             @csrf

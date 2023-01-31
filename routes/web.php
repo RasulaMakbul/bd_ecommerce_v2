@@ -53,9 +53,9 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     // subCategory routes
     Route::controller(App\Http\Controllers\Admin\SubCategoryConroller::class)->group(function () {
         Route::get('subcategory/edit/{subcategory}', 'edit')->name('subcategory.edit');
+        Route::get('subcategory/show/{subcategory}', 'show')->name('subcategory.show');
         Route::post('subcategory/store', 'store')->name('subcategory.store');
         Route::put('subcategory/update/{subcategory}', 'update')->name('subcategory.update');
-        Route::put('subcategory/show/{subcategory}', 'show')->name('subcategory.show');
         Route::get('subcategory/active/{subcategory}', 'active')->name('subcategory.active');
         Route::get('subcategory/inactive/{subcategory}', 'inactive')->name('subcategory.inactive');
         Route::get('subcategory/delete/{subcategory}', 'delete')->name('subcategory.delete');

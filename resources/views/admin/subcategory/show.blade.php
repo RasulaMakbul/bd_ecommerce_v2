@@ -40,14 +40,7 @@
 
                                 <!-- dropdown -->
                                 <div class="mb-3">
-                                    <select name="category_id" class="block w-full mt-1 rounded-md">
-                                        <option value="">{{__('Select Category')}}</option>
-                                        @foreach ($category as $item)
 
-                                        <option @selected($item->id == $subcategory->category_id)
-                                            value="{{$item->id}}">{{$item->name}}</option>
-                                        @endforeach
-                                    </select>
 
                                 </div>
                                 <div class="mb-3">

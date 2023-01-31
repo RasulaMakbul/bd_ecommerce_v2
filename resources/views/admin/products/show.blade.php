@@ -313,6 +313,7 @@
             <td>
                 <a href="{{route('color.show',$color->id)}}" class="btn btn-sm link-info"><i class="fa-solid fa-eye fs-5"></i></a>
                 <a href="{{route('color.edit',$color->id)}}" class="btn btn-sm link-warning"><i class="fa-solid fa-pen-to-square fs-5"></i></a>
+                <a href="{{route('color.delete',$color->id)}}" class="btn btn-sm link-danger"><i class="fa-solid fa-trash fs-5"></i></a>
                 <!-- Button trigger modal -->
 
 

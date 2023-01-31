@@ -73,7 +73,7 @@
                         @endif
                     </td>
                     <td>
-                        <a href="#" class="btn btn-sm link-info"><i class="fa-solid fa-eye fs-5"></i></a>
+                        <a href="{{route('subcategory.show',$item->id)}}" class="btn btn-sm link-info"><i class="fa-solid fa-eye fs-5"></i></a>
                         <a href="{{route('subcategory.edit',$item->id)}}" class=" btn btn-sm link-warning" comment="Edit subcategory"><i class="fa-solid fa-pen-to-square fs-5"></i></a>
                         <a href="{{route('subcategory.delete',$item->id)}}" class=" btn btn-sm link-danger" comment="Delete subcategory"><i class="fa-solid fa-trash fs-5"></i></a>
                         <!-- <form action="{{ route('category.delete', $item->id) }}" method="post" style="display:inline">
