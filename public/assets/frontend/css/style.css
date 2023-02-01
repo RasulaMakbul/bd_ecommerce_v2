@@ -226,3 +226,44 @@ body {
     margin-top: 10px;
 }
 /* Product Card End */
+
+.showPagetop {
+    height: 400px;
+    opacity: 0.75;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.showPagetop ::before {
+    content: "";
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+}
+
+.showPagetop .showPageInner {
+    padding: 3em;
+}
+
+.showPagetop .showPageInner h2 {
+    text-transform: uppercase;
+    position: relative;
+    color: #181717;
+    font-size: 5rem;
+    line-height: 0.9;
+    text-align: center;
+}
+
+.underline {
+    height: 4px;
+    width: 100px;
+    background-color: #2874f0;
+    margin: 10px 0px;
+}

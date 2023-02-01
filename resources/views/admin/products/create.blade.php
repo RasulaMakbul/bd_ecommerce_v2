@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title','Create Products')
 
 @section('content')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -165,7 +166,7 @@
 
 
     <div class="my-5">
-        <button type="submit" class="btn btn-sm btn-outline-primary">{{__('Update')}}</button>
+        <button type="submit" class="btn btn-sm btn-outline-primary">{{__('Save')}}</button>
         <a href="{{route('category.index')}}" class="btn btn-sm btn-outline-secondary">{{__('Close')}}</a>
     </div>
 

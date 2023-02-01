@@ -74,11 +74,7 @@
                     <a href="{{route('product.show',$item->id)}}" class="btn btn-sm link-info"><i class="fa-solid fa-eye fs-5"></i></a>
                     <a href="{{route('product.edit',$item->id)}}" class=" btn btn-sm link-warning" comment="Edit subcategory"><i class="fa-solid fa-pen-to-square fs-5"></i></a>
                     <a href="{{route('product.delete',$item->id)}}" class=" btn btn-sm link-danger" comment="Delete subcategory"><i class="fa-solid fa-trash fs-5"></i></a>
-                    <!-- <form action="{{ route('category.delete', $item->id) }}" method="post" style="display:inline">
-                            @csrf
-                            @method('delete')
-                            <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure want to delete')">Delete</button>
-                        </form> -->
+
 
                 </td>
             </tr>

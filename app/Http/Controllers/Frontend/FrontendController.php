@@ -17,7 +17,8 @@ class FrontendController extends Controller
     {
         $sliders = Slider::where('status', '1')->get();
         $categories = Category::where('status', '1')->get();
-        return View('welcome', compact('sliders', 'categories'));
+        $trendingProducts = Product::where('trending', '1')->latest()->take(15)->get();
+        return View('welcome', compact('sliders', 'categories', 'trendingProducts'));
     }
 
     public function categories()

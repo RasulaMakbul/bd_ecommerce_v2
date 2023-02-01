@@ -7,10 +7,10 @@
 
             <div class="carousel-caption d-none d-md-block">
                 <div class="custom-carousel-content">
-                    <h1>
+                    <h2>
                         <span>{{$slide->title}}</span>
                         to Boost your Brand Name &amp; Sales
-                    </h1>
+                    </h2>
                     <p>
                         {{$slide->description}}
                     </p>

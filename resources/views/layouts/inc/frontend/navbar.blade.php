@@ -91,7 +91,9 @@
                                 {{__('Categories')}}
                             </button>
                             <ul class="dropdown-menu">
-
+                                @foreach($adminCategory as $category)
+                                <li><a class="dropdown-item" href="{{ route('frontend.products', $category->id) }}">{{ $category->title }}</a></li>
+                                @endforeach
                                 <li><a class="dropdown-item" href="{{route('collections.categories')}}">{{__('All Categories')}}</a></li>
                             </ul>
                         </div>
