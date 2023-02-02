@@ -24,6 +24,7 @@ Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index
 Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories'])->name('collections.categories');
 Route::get('/category/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products'])->name('collections.category');
 Route::get('/newProduct', [App\Http\Controllers\Frontend\FrontendController::class, 'newArrival'])->name('collections.new');
+Route::get('/product/{product}', [App\Http\Controllers\Frontend\FrontendController::class, 'product'])->name('collections.product');
 
 
 

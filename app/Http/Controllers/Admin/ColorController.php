@@ -17,27 +17,16 @@ class ColorController extends Controller
     {
         // dd($request->images);
 
-        $images = [];
-        if ($request->hasFile('images')) {
-            foreach ($request['images'] as $image) {
-                $originalName = $image->getClientOriginalName();
-                $fileName = date('Y-m-d') . time() . $originalName;
-                $image_path =  $image->storeAs('image', $fileName, 'public');
-
-                array_push($images, $image_path);
-            }
-        }
+        $fileName = $this->uploadImage($request->File('image'));
 
         $requestData = [
 
             'name' => $request->name,
             'product_id' => $request->product_id,
             'code' => $request->code,
-            'costing' => $request->costing,
-            'unitPrice' => $request->unitPrice,
             'stock' => $request->stock,
 
-            'images' => $images,
+            'image' => $fileName
         ];
         // $category->product()->create($requestData);
         Color::create($requestData);
@@ -52,28 +41,16 @@ class ColorController extends Controller
     public function update(Color $color, ColorRequest $request)
     {
 
-        $images = [];
-
-        if ($request->hasFile('images')) {
-            foreach ($request['images'] as $image) {
-                $originalName = $image->getClientOriginalName();
-                $fileName = date('Y-m-d') . time() . $originalName;
-                $image_path =  $image->storeAs('image', $fileName, 'public');
-
-                array_push($images, $image_path);
-            }
-        }
+        $fileName = $this->uploadImage($request->File('image'));
 
         $requestData = [
 
             'name' => $request->name,
             'product_id' => $request->product_id,
             'code' => $request->code,
-            'costing' => $request->costing,
-            'unitPrice' => $request->unitPrice,
             'stock' => $request->stock,
 
-            'images' => $images,
+            'images' => $fileName,
         ];
         $color->update($requestData);
         return redirect()->back()->with('message', 'Color Updated!');
@@ -83,5 +60,14 @@ class ColorController extends Controller
     {
         $color->delete();
         return redirect()->back()->with('message', 'Deleted!');
+    }
+
+    public function uploadImage($image)
+    {
+
+        $originalName = $image->getClientOriginalName();
+        $fileName = date('Y-m-d') . time() . $originalName;
+        $image->move(storage_path('/app/public/colors'), $fileName);
+        return $fileName;
     }
 }

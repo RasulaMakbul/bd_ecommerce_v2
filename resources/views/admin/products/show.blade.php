@@ -26,7 +26,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="productCreateModalLabel">{{__('Create Product')}}</h5>
+                            <h5 class="modal-title" id="productCreateModalLabel">{{__('Create Color')}}</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -51,23 +51,13 @@
 
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label for="costing" class="form-label">{{__('Costing')}}</label>
-                                    <input type="text" class="form-control" id="costing" name="costing" value="{{old('costing')}}">
-                                    @error('costing') <small class=" text-danger">{{$message}}</small> @enderror
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="unitPrice" class="form-label">{{__('Unit Price')}}</label>
-                                    <input type="text" class="form-control" id="unitPrice" name="unitPrice" value="{{old('unitPrice')}}">
-                                    @error('unitPrice') <small class=" text-danger">{{$message}}</small> @enderror
-                                </div>
-                                <div class="form-group mb-3">
                                     <label for="stock" class="form-label">{{__('Stock')}}</label>
                                     <input type="text" class="form-control" id="stock" name="stock" value="{{old('stock')}}">
                                     @error('stock') <small class=" text-danger">{{$message}}</small> @enderror
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="images" class="form-label">{{__('Image') }}</label>
-                                    <input type="file" name="images[]" class="form-control" id="image" multiple>
+                                    <input type="file" name="image" class="form-control" id="image">
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">{{__('Save')}}</button>
@@ -145,6 +135,39 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-3">
+                        <h5>{{__('Costing')}}</h5>
+                    </div>
+                    <div class="col-1">
+                        <h5>{{__(':')}}</h5>
+                    </div>
+                    <div class="col-8">
+                        <p>{{$product->costing}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <h5>{{__('Original Price')}}</h5>
+                    </div>
+                    <div class="col-1">
+                        <h5>{{__(':')}}</h5>
+                    </div>
+                    <div class="col-8">
+                        <p>{{$product->originalPrice}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <h5>{{__('Selling Price')}}</h5>
+                    </div>
+                    <div class="col-1">
+                        <h5>{{__(':')}}</h5>
+                    </div>
+                    <div class="col-8">
+                        <p>{{$product->sellingPrice}}</p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-3">
                         <h5>{{__('Short Defination')}}</h5>
@@ -289,11 +312,10 @@
     <thead>
         <tr>
             <th scope="col">#</th>
+            <th scope="col">{{__('Image')}}</th>
             <th scope="col">{{__('Color Name')}}</th>
             <th scope="col">{{__('ID')}}</th>
             <th scope="col">{{__('Code')}}</th>
-            <th scope="col">{{__('Costing')}}</th>
-            <th scope="col">{{__('Unit Price')}}</th>
             <th scope="col">{{__('Stock')}}</th>
             <th scope="col">{{__('Action')}}</th>
         </tr>
@@ -304,11 +326,10 @@
         @foreach($product->color as $color)
         <tr>
             <th scope="row">{{ $loop->iteration }}</th>
+            <td class="tableImage"><img src="{{asset('storage/colors/'.$color->image)}}" alt=""></td>
             <td>{{$color->name}}</td>
             <td>{{$color->id}}</td>
             <td>{{$color->code}}</td>
-            <td>{{$color->costing}}</td>
-            <td>{{$color->unitPrice}}</td>
             <td>{{$color->stock}}</td>
             <td>
                 <a href="{{route('color.show',$color->id)}}" class="btn btn-sm link-info"><i class="fa-solid fa-eye fs-5"></i></a>

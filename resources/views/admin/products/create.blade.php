@@ -14,6 +14,12 @@
                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">{{__('Home')}}</button>
             </li>
             <li class="nav-item" role="presentation">
+                <button class="nav-link " id="apearance-tab" data-bs-toggle="tab" data-bs-target="#apearance-tab-pane" type="button" role="tab" aria-controls="apearance-tab-pane" aria-selected="false">{{__('Apearance')}}</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link " id="pricing-tab" data-bs-toggle="tab" data-bs-target="#pricing-tab-pane" type="button" role="tab" aria-controls="pricing-tab-pane" aria-selected="false">{{__('Pricing')}}</button>
+            </li>
+            <li class="nav-item" role="presentation">
                 <button class="nav-link" id="seotag-tab" data-bs-toggle="tab" data-bs-target="#seotag-tab-pane" type="button" role="tab" aria-controls="seotag-tab-pane" aria-selected="false">{{('SEO Tags')}}</button>
             </li>
             <li class="nav-item" role="presentation">
@@ -121,12 +127,44 @@
                     <input type="text" class="form-control" id="origin" name="origin" value="{{old('origin')}}">
                     @error('origin') <small class="text-danger">{{$message}}</small> @enderror
                 </div>
+
+            </div>
+            <!-- apearance -->
+
+            <div class="tab-pane fade show active" id="apearance-tab-pane" role="tabpanel" aria-labelledby="apearance-tab" tabindex="0">
+
                 <div class="form-group mb-3">
                     <input type="checkbox" id="status" name="status">
                     <label class="form-label">{{__('Active')}}</label>
                 </div>
+                <div class="form-group mb-3">
+                    <input type="checkbox" id="trending" name="trending">
+                    <label class="form-label">{{__('Trending')}}</label>
+                </div>
 
             </div>
+            <!-- Pricing -->
+            <div class="tab-pane fade show active" id="pricing-tab-pane" role="tabpanel" aria-labelledby="pricing-tab" tabindex="0">
+
+                <div class="form-group mb-3">
+                    <label for="origin" class="form-label">{{__('Costing')}}</label>
+                    <input type="number" class="form-control" id="costing" name="costing" value="{{old('costing')}}">
+                    @error('costing') <small class="text-danger">{{$message}}</small> @enderror
+                </div>
+                <div class="form-group mb-3">
+                    <label for="origin" class="form-label">{{__('Original Price')}}</label>
+                    <input type="number" class="form-control" id="originalPrice" name="originalPrice" value="{{old('originalPrice')}}">
+                    @error('originalPrice') <small class="text-danger">{{$message}}</small> @enderror
+                </div>
+                <div class="form-group mb-3">
+                    <label for="origin" class="form-label">{{__('Selling Price')}}</label>
+                    <input type="number" class="form-control" id="sellingPrice" name="sellingPrice" value="{{old('sellingPrice')}}">
+                    @error('sellingPrice') <small class="text-danger">{{$message}}</small> @enderror
+                </div>
+
+
+            </div>
+            <!-- SEO TAG -->
             <div class="tab-pane fade" id="seotag-tab-pane" role="tabpanel" aria-labelledby="seotag-tab" tabindex="0">
                 <div class="form-group mb-3">
                     <label for="meta_title" class="form-label">{{__('Meta Title')}}</label>
@@ -143,11 +181,12 @@
                     <input type="text" class="form-control" id="meta_description" name="meta_description" value="{{old('meta_description')}}">
                     @error('meta_description') <small class="text-danger">{{$message}}</small> @enderror
                 </div>
-                <div class="form-group mb-3">
-                    <input type="checkbox" id="trending" name="trending">
-                    <label class="form-label">{{__('Trending')}}</label>
-                </div>
+
             </div>
+
+
+            <!-- Image -->
+
             <div class="tab-pane fade" id="image-tab-pane" role="tabpanel" aria-labelledby="image-tab" tabindex="0">
 
                 <div class="form-group my-3">

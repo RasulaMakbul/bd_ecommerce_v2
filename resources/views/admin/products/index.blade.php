@@ -54,20 +54,18 @@
 
                 <td>{{$item->code}}</td>
                 <td>{{$item->slug}}</td>
-                <td>@if($item->status==0)
 
-                    <a href="{{route('product.inactive',$item->id)}}" class="btn btn-sm link-danger">{{__('Visible')}}</a>
+                <td>@if($item->trending==0)
+                    <a href="{{route('product.trending',$item->id)}}" class="btn btn-sm link-success">{{__('Not Ternding')}}</a>
                     @else
-
-                    <a href="{{route('product.active',$item->id)}}" class="btn btn-sm link-success">{{__('Hidden')}}</a>
+                    <a href="{{route('product.notTrending',$item->id)}}" class="btn btn-sm link-danger">{{__('Trending')}}</a>
                     @endif
                 </td>
-                <td>@if($item->trending==0)
-
-                    <a href="{{route('product.notTrending',$item->id)}}" class="btn btn-sm link-danger">{{__('Trending')}}</a>
+                <td>@if($item->status==0)
+                    <a href="{{route('product.active',$item->id)}}" class="btn btn-sm link-success">{{__('Hidden')}}</a>
                     @else
+                    <a href="{{route('product.inactive',$item->id)}}" class="btn btn-sm link-danger">{{__('Visible')}}</a>
 
-                    <a href="{{route('product.trending',$item->id)}}" class="btn btn-sm link-success">{{__('Not Ternding')}}</a>
                     @endif
                 </td>
                 <td>

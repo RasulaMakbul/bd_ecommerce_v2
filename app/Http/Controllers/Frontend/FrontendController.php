@@ -48,4 +48,8 @@ class FrontendController extends Controller
         $products = Product::latest()->take(15)->get();
         return view('frontend.collections.products.newProduct', compact('products'));
     }
+    public function product(Product $product)
+    {
+        return view('frontend.collections.products.show', compact('product'));
+    }
 }

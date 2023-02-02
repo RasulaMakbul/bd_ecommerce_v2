@@ -60,6 +60,9 @@ class ProductConroller extends Controller
                 'meta_title' => $request->meta_title,
                 'meta_keyword' => $request->meta_keyword,
                 'meta_description' => $request->meta_description,
+                'originalPrice' => $request->originalPrice,
+                'sellingPrice' => $request->sellingPrice,
+                'costing' => $request->costing,
                 'status' => $request->status == true ? '1' : '0',
                 'trending' => $request->trending == true ? '1' : '0',
                 'images' => $images,
@@ -89,20 +92,13 @@ class ProductConroller extends Controller
                 'meta_description' => $request->meta_description,
                 'status' => $request->status == true ? '1' : '0',
                 'trending' => $request->trending == true ? '1' : '0',
+                'originalPrice' => $request->originalPrice,
+                'sellingPrice' => $request->sellingPrice,
+                'costing' => $request->costing,
             ];
             // $subcategory->product()->create($requestData);
             Product::create($requestData);
         }
-
-
-
-        // dd($requestData);
-
-
-
-
-
-        // return $product->id;
         return redirect()->route('product.index')->with('message', 'Product created!');
     }
 
@@ -129,7 +125,7 @@ class ProductConroller extends Controller
     {
         // dd($id);
         $product = Product::find($id);
-        $product->status = 0;
+        $product->status = 1;
         $product->update();
         return back();
     }
@@ -137,7 +133,7 @@ class ProductConroller extends Controller
     {
         // dd($id);
         $product = Product::find($id);
-        $product->status = 1;
+        $product->status = 0;
         $product->update();
         return back();
     }
@@ -148,7 +144,7 @@ class ProductConroller extends Controller
     {
         // dd($id);
         $product = Product::find($id);
-        $product->trending = 0;
+        $product->trending = 1;
         $product->update();
         return back();
     }
@@ -156,7 +152,7 @@ class ProductConroller extends Controller
     {
         // dd($id);
         $product = Product::find($id);
-        $product->trending = 1;
+        $product->trending = 0;
         $product->update();
         return back();
     }

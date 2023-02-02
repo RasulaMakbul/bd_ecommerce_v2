@@ -28,12 +28,17 @@ return new class extends Migration
             $table->string('weight');
             $table->string('pao');
             $table->string('origin');
-            $table->tinyInteger('trending')->default('0')->comment('0=trending,1=not-trending');
-            $table->tinyInteger('status')->default('0')->comment('0=visible,1=hidden');
+            $table->tinyInteger('trending')->default('0')->comment('1=trending,0=not-trending');
+            $table->tinyInteger('status')->default('0')->comment('1=visible,0=hidden');
             $table->string('meta_title');
             $table->string('meta_keyword');
             $table->string('meta_description');
             $table->text('images')->nullable();
+
+            $table->integer('costing');
+            $table->integer('originalPrice');
+            $table->integer('sellingPrice');
+
 
 
             $table->unsignedBigInteger('category_id')->nullable();

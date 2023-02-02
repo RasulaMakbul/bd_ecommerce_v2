@@ -20,7 +20,7 @@
                     <p>{{ Str::limit($item->description, 50) }}</p>
                 </div>
                 <div class="mt-2">
-                    <a href="" class="btn btn1"><i class="fa-solid fa-eye"></i>{{__(' View')}} </a>
+                    <a href="{{route('collections.product',$item->id)}}" class="btn btn1"><i class="fa-solid fa-eye"></i>{{__(' View')}} </a>
                 </div>
             </div>
         </div>
