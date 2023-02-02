@@ -28,7 +28,7 @@
             <div class="col-md-12 ">
                 <div class="owl-carousel owl-theme trending-product">
                     @foreach($trendingProducts as $item)
-                    <div class="item">
+                    <div class="items">
                         <div class="product-card">
                             <div class="product-card-img">
                                 <label class="stock bg-success">{{__('New')}}</label>
@@ -96,7 +96,7 @@
 
 @section('script')
 <script>
-    $('.trending-product').owlCarousel({
+    $('.owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
         nav: true,
@@ -112,13 +112,5 @@
             }
         }
     })
-    owl.on('mousewheel', '.owl-stage', function(e) {
-        if (e.deltaY > 0) {
-            owl.trigger('next.owl');
-        } else {
-            owl.trigger('prev.owl');
-        }
-        e.preventDefault();
-    });
 </script>
 @endsection

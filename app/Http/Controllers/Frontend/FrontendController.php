@@ -43,4 +43,9 @@ class FrontendController extends Controller
             return redirect()->back();
         }
     }
+    public function newArrival()
+    {
+        $products = Product::latest()->take(15)->get();
+        return view('frontend.collections.products.newProduct', compact('products'));
+    }
 }

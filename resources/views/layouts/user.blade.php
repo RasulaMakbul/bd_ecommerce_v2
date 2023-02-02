@@ -37,7 +37,6 @@
         <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
-        <script src="{{asset('assets/frontend/scripts.js')}}"></script>
         @yield('script')
         @livewireScripts
         @stack('scripts')

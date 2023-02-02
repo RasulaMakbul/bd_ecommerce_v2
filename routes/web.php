@@ -22,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index'])->name('welcome');
 Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories'])->name('collections.categories');
-Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products'])->name('collections.category');
+Route::get('/category/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products'])->name('collections.category');
+Route::get('/newProduct', [App\Http\Controllers\Frontend\FrontendController::class, 'newArrival'])->name('collections.new');
 
 
 

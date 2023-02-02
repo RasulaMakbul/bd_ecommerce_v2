@@ -92,7 +92,7 @@
                             </button>
                             <ul class="dropdown-menu">
                                 @foreach($adminCategory as $category)
-                                <li><a class="dropdown-item" href="{{ route('frontend.products', $category->id) }}">{{ $category->title }}</a></li>
+                                <li><a class="dropdown-item" href="{{ route('collections.category', $category->id) }}">{{ $category->name }}</a></li>
                                 @endforeach
                                 <li><a class="dropdown-item" href="{{route('collections.categories')}}">{{__('All Categories')}}</a></li>
                             </ul>
@@ -100,25 +100,11 @@
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">New Arrivals</a>
+                        <a class="nav-link" href="{{route('collections.new')}}">New Arrivals</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Featured Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Electronics</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Fashions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Accessories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Appliances</a>
+
                     </li>
                 </ul>
             </div>
